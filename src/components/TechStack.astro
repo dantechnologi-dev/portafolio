@@ -1,0 +1,73 @@
+---
+import HTML from "./icons/HTML.astro"
+import CSS from "./icons/CSS.astro"
+import JavaScript from "./icons/JavaScript.astro"
+import Angular from "./icons/Angular.astro"
+import SpringBoot from "./icons/SpringBoot.astro"
+
+const TECHNOLOGIES = [
+  {
+    name: "HTML",
+    icon: HTML,
+    iconColor: "text-[#E34F26]",
+    hoverBorder: "hover:border-[#E34F26]/70",
+    hoverShadow: "hover:shadow-[0_4px_20px_rgba(227,79,38,0.25)]",
+    hoverText: "hover:text-[#E34F26]",
+    badgeBg: "dark:group-hover:bg-[#E34F26]/10",
+  },
+  {
+    name: "CSS",
+    icon: CSS,
+    iconColor: "text-[#2965F1]",
+    hoverBorder: "hover:border-[#2965F1]/70",
+    hoverShadow: "hover:shadow-[0_4px_20px_rgba(41,101,241,0.25)]",
+    hoverText: "hover:text-[#2965F1]",
+    badgeBg: "dark:group-hover:bg-[#2965F1]/10",
+  },
+  {
+    name: "JavaScript",
+    icon: JavaScript,
+    iconColor: "text-[#F7DF1E]",
+    hoverBorder: "hover:border-[#F7DF1E]/70",
+    hoverShadow: "hover:shadow-[0_4px_20px_rgba(247,223,30,0.25)]",
+    hoverText: "hover:text-[#F7DF1E]",
+    badgeBg: "dark:group-hover:bg-[#F7DF1E]/10",
+  },
+  {
+    name: "Angular",
+    icon: Angular,
+    iconColor: "text-[#E23237] dark:text-[#F43F5E]",
+    hoverBorder: "hover:border-[#E23237]/70",
+    hoverShadow: "hover:shadow-[0_4px_20px_rgba(226,50,55,0.25)]",
+    hoverText: "hover:text-[#E23237] dark:hover:text-[#F43F5E]",
+    badgeBg: "dark:group-hover:bg-[#E23237]/10",
+  },
+  {
+    name: "Spring Boot",
+    icon: SpringBoot,
+    iconColor: "text-[#6DB33F]",
+    hoverBorder: "hover:border-[#6DB33F]/70",
+    hoverShadow: "hover:shadow-[0_4px_20px_rgba(109,179,63,0.25)]",
+    hoverText: "hover:text-[#6DB33F]",
+    badgeBg: "dark:group-hover:bg-[#6DB33F]/10",
+  },
+]
+---
+
+<div class="flex flex-col items-center justify-center gap-3 py-2">
+  <span class="text-xs uppercase tracking-widest font-semibold text-gray-400 dark:text-gray-400">
+    Tecnologías Principales
+  </span>
+  <div class="flex flex-wrap items-center justify-center gap-3">
+    {
+      TECHNOLOGIES.map(({ name, icon: Icon, iconColor, hoverBorder, hoverShadow, hoverText, badgeBg }) => (
+        <div
+          class={`group flex items-center gap-2.5 px-4 py-2 rounded-xl border border-gray-200/50 dark:border-white/10 bg-white/40 dark:bg-gray-900/50 backdrop-blur-sm text-gray-700 dark:text-gray-200 text-sm font-medium transition-all duration-300 hover:-translate-y-1 ${hoverBorder} ${hoverShadow} ${hoverText} ${badgeBg} cursor-default`}
+        >
+          <Icon class={`size-5 ${iconColor} transition-transform duration-300 group-hover:scale-110`} />
+          <span class="transition-colors duration-300">{name}</span>
+        </div>
+      ))
+    }
+  </div>
+</div>
